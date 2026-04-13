@@ -5,8 +5,9 @@ import (
 )
 
 func init() {
-	err := Load("conf/config.yaml")
+	defaultPath := "config/global.toml"
+	err := Load(defaultPath)
 	if err != nil {
-		logrus.WithField("path", "conf/config.yaml").Debug("default config not found")
+		logrus.WithField("path", defaultPath).Debug("default config not found")
 	}
 }
