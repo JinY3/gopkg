@@ -7,6 +7,8 @@ require (
 	github.com/asmile1559/dyshop/utils v0.0.0-20250305131711-154ca6232f2e
 	github.com/fatih/color v1.14.1
 	github.com/fatih/structs v1.1.0
+	github.com/gorilla/websocket v1.5.0
+	github.com/r3labs/sse/v2 v2.10.0
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/viper v1.19.0
 	go.etcd.io/etcd/client/v3 v3.5.19
@@ -58,6 +60,7 @@ require (
 	golang.org/x/mod v0.20.0 // indirect
 	golang.org/x/oauth2 v0.28.0 // indirect
 	golang.org/x/term v0.30.0 // indirect
+	gopkg.in/cenkalti/backoff.v1 v1.1.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	k8s.io/apimachinery v0.32.3 // indirect
 	k8s.io/client-go v0.32.3 // indirect
