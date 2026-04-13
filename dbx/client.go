@@ -13,7 +13,7 @@ type MySQLConfig struct {
 	Password string
 	Host     string
 	Port     int
-	DbName   string
+	DBName   string
 }
 
 func NewMySQL(conf MySQLConfig, opts ...InitOption) (*gorm.DB, error) {
@@ -28,12 +28,12 @@ func NewMySQL(conf MySQLConfig, opts ...InitOption) (*gorm.DB, error) {
 	}
 	defer sqlDB.Close()
 
-	_, err = sqlDB.Exec(fmt.Sprintf("CREATE DATABASE IF NOT EXISTS %s", conf.DbName))
+	_, err = sqlDB.Exec(fmt.Sprintf("CREATE DATABASE IF NOT EXISTS %s", conf.DBName))
 	if err != nil {
 		return nil, err
 	}
 
-	dsn = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local", conf.User, conf.Password, conf.Host, conf.Port, conf.DbName)
+	dsn = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local", conf.User, conf.Password, conf.Host, conf.Port, conf.DBName)
 	db, err := gorm.Open(mysql.Open(dsn))
 	if err != nil {
 		return nil, err
